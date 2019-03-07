@@ -22,7 +22,7 @@ import (
 	"sync"
 )
 
-// This tests the full set of calls to send evaluator requests. It triggers the race detector because of setting
+// TestCoordinator_sendEvaluatorRequests: This tests the full set of calls to send evaluator requests. It triggers the race detector because of setting
 // doEvaluations to false to end the loop.
 func TestCoordinator_sendEvaluatorRequests(t *testing.T) {
 	coordinator := fixtureCoordinator()
@@ -76,7 +76,7 @@ func TestCoordinator_sendEvaluatorRequests(t *testing.T) {
 	coordinator.doEvaluations = false
 }
 
-// We know this will trigger the race detector, because of the way we manipulate the ZK state
+// TestCoordinator_manageEvalLoop_Start: We know this will trigger the race detector, because of the way we manipulate the ZK state
 func TestCoordinator_manageEvalLoop_Start(t *testing.T) {
 	coordinator := fixtureCoordinator()
 	coordinator.Configure()
@@ -95,7 +95,7 @@ func TestCoordinator_manageEvalLoop_Start(t *testing.T) {
 	assert.True(t, coordinator.doEvaluations, "Expected doEvaluations to be true")
 }
 
-// We know this will trigger the race detector, because of the way we manipulate the ZK state
+// TestCoordinator_manageEvalLoop_Expiration: We know this will trigger the race detector, because of the way we manipulate the ZK state
 func TestCoordinator_manageEvalLoop_Expiration(t *testing.T) {
 	coordinator := fixtureCoordinator()
 	coordinator.Configure()
@@ -119,7 +119,7 @@ func TestCoordinator_manageEvalLoop_Expiration(t *testing.T) {
 	assert.False(t, coordinator.doEvaluations, "Expected doEvaluations to be false")
 }
 
-// We know this will trigger the race detector, because of the way we manipulate the ZK state
+// TestCoordinator_manageEvalLoop_Reconnect: We know this will trigger the race detector, because of the way we manipulate the ZK state
 func TestCoordinator_manageEvalLoop_Reconnect(t *testing.T) {
 	coordinator := fixtureCoordinator()
 	coordinator.Configure()

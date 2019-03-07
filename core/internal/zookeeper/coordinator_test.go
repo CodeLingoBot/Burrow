@@ -119,7 +119,7 @@ func TestCoordinator_mainLoop(t *testing.T) {
 	coordinator.running.Wait()
 }
 
-// Example for the Coordinator docs on how to do connection state monitoring
+// ExampleCoordinator_stateMonitoring: Example for the Coordinator docs on how to do connection state monitoring
 func ExampleCoordinator_stateMonitoring() {
 	// Ignore me - needed to make the example clean
 	app := &protocol.ApplicationContext{}

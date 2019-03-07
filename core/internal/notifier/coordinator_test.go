@@ -161,7 +161,7 @@ func TestCoordinator_StartStop(t *testing.T) {
 	mockModule.AssertCalled(t, "Stop")
 }
 
-// This tests the full set of calls to send and process storage requests
+// TestCoordinator_sendClusterRequest: This tests the full set of calls to send and process storage requests
 func TestCoordinator_sendClusterRequest(t *testing.T) {
 	coordinator := fixtureCoordinator()
 	coordinator.Configure()
@@ -206,7 +206,7 @@ func TestCoordinator_sendClusterRequest(t *testing.T) {
 	assert.True(t, ok, "Expected group to be testgroup")
 }
 
-// Note, we do not check the calls to the module here, just that the response loop sets the event properly
+// TestCoordinator_responseLoop_NotFound: Note, we do not check the calls to the module here, just that the response loop sets the event properly
 func TestCoordinator_responseLoop_NotFound(t *testing.T) {
 	coordinator := fixtureCoordinator()
 

@@ -76,7 +76,7 @@ func TestCachingEvaluator_Configure_DefaultExpireCache(t *testing.T) {
 	storageCoordinator.Stop()
 }
 
-// Also tests Stop
+// TestCachingEvaluator_Start: Also tests Stop
 func TestCachingEvaluator_Start(t *testing.T) {
 	storageCoordinator, module := startWithTestCluster()
 

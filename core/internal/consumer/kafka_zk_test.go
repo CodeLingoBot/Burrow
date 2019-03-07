@@ -92,7 +92,7 @@ func TestKafkaZkClient_Start(t *testing.T) {
 	mockZookeeper.AssertExpectations(t)
 }
 
-// This tests all the watchers - each one will be called in turn and set, and we assure that they're all closing properly
+// TestKafkaZkClient_watchGroupList: This tests all the watchers - each one will be called in turn and set, and we assure that they're all closing properly
 func TestKafkaZkClient_watchGroupList(t *testing.T) {
 	mockZookeeper := helpers.MockZookeeperClient{}
 
